@@ -1,24 +1,28 @@
-import { useState } from 'react';
+import {useState, useEffect} from 'react';
 
-export const usePagination = (totalItems: number, itemsPerPage: number) => {
-  const [currentPage, setCurrentPage] = useState<number>(1);
+export const usePagination = (totalItems: number, itemsPerPage: number, currentPageProp: number) => {
+    const [currentPage, setCurrentPage] = useState<number>(currentPageProp);
 
-  const totalPages = Math.ceil(totalItems / itemsPerPage);
+    useEffect(() => {
+        setCurrentPage(1);
+    }, [totalItems]);
 
-  const indexOfLastItem = currentPage * itemsPerPage;
-  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+    const totalPages = Math.ceil(totalItems / itemsPerPage);
 
-  const handlePageChange = (page: number) => {
-    if (page >= 1 && page <= totalPages) {
-      setCurrentPage(page);
-    }
-  };
+    const indexOfLastItem = currentPage * itemsPerPage;
+    const indexOfFirstItem = indexOfLastItem - itemsPerPage;
 
-  return {
-    currentPage,
-    totalPages,
-    indexOfFirstItem,
-    indexOfLastItem,
-    handlePageChange,
-  };
+    const handlePageChange = (page: number) => {
+        if (page >= 1 && page <= totalPages) {
+            setCurrentPage(page);
+        }
+    };
+
+    return {
+        currentPage,
+        totalPages,
+        indexOfFirstItem,
+        indexOfLastItem,
+        handlePageChange,
+    };
 };

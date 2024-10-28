@@ -19,9 +19,9 @@ const Pagination: React.FC<PaginationProps> = ({
         const paginationNumbers: (number | string)[] = [];
 
         const addPageNumbers = (start: number, end: number) => {
-            for (let i = start; i <= end; i++) {
+            Array.from({length: end - start + 1}, (_, i) => start + i).forEach(i => {
                 paginationNumbers.push(i);
-            }
+            });
         };
 
         if (totalPages <= maxVisiblePages) {

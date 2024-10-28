@@ -1,50 +1,52 @@
-# React + TypeScript + Vite
+# Test Task for Job Application
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This repository contains a test task for a job application, focusing on building a recipe application using React, TypeScript, and Tanstack Query.
 
-Currently, two official plugins are available:
+## Description
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+The application allows users to search for recipes, filter them by category, and view details about each recipe. Users can also add recipes to a selection, which persists in local storage, enabling access even after page refreshes.
 
-## Expanding the ESLint configuration
+### Features
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- Search recipes by name
+- Filter recipes by category
+- View details of each recipe, including ingredients and instructions
+- Add and remove recipes from the selected list
+- Persistent state using local storage
 
-- Configure the top-level `parserOptions` property like this:
+## Technologies Used
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-});
-```
+- **React**: For building the user interface
+- **TypeScript**: For type safety and better developer experience
+- **Tanstack Query**: For managing server state and data fetching
+- **Tailwind CSS**: For styling the application
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+## Getting Started
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react';
+To run this project locally, follow these steps:
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-});
-```
+1. **Clone the repository**:
+
+   ```bash
+   git clone https://github.com/your-username/test-task.git
+      ```
+
+2. **Navigate to the project directory:**:
+
+    ```bash
+    cd test-task   
+    ```
+
+3. **Install dependencies:**:
+
+    ```bash
+    npm install
+    ```
+
+4. **Install dependencies:**:
+
+    ```bash
+    npm start
+    ```
+
+4. **Open your browser and go to http://localhost:5174 to view the application.**:
