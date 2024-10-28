@@ -26,7 +26,7 @@ const AllRecipes: React.FC = () => {
         indexOfFirstItem,
         indexOfLastItem,
         handlePageChange,
-    } = usePagination(filteredRecipes.length, itemsPerPage, 1); // Передаємо довжину відфільтрованих рецептів
+    } = usePagination(filteredRecipes.length, itemsPerPage, 1);
 
     const handleClear = () => {
         setSearchTerm('');
@@ -34,7 +34,7 @@ const AllRecipes: React.FC = () => {
     };
 
     const currentRecipes =
-        filteredRecipes.slice(indexOfFirstItem, indexOfLastItem); // Використовуйте `slice` без `?`
+        filteredRecipes.slice(indexOfFirstItem, indexOfLastItem);
 
     if (recipesLoading || categoriesLoading) {
         return <div className="text-center mt-6 text-white">Loading...</div>;
